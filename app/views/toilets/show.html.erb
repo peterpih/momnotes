@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>In:</strong>
+  <%= @toilet.in %>
+</p>
+
+<p>
+  <strong>Out:</strong>
+  <%= @toilet.out %>
+</p>
+
+<%= link_to 'Edit', edit_toilet_path(@toilet) %> |
+<%= link_to 'Back', toilets_path %>
