@@ -4,7 +4,7 @@ class ToiletsController < ApplicationController
   # GET /toilets
   # GET /toilets.json
   def index
-    @toilets = Toilet.all
+    @toilets = Toilet.order(:in)
   end
 
   # GET /toilets/1
