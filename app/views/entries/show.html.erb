@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h2>Show Entry</h2>
 <p>
   <strong>Date:</strong>
   <%= @entry.date %><br>
@@ -8,5 +8,5 @@
   <%= @entry.note %>
 </p>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to 'Edit', edit_entry_path(@entry), class: 'btn btn-info gtn-md' %>
+<%= link_to 'Back to List of Entries', entries_path, class: 'btn btn-danger btn-md' %>
