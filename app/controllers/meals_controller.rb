@@ -20,6 +20,7 @@ class MealsController < ApplicationController
 
   # GET /meals/1/edit
   def edit
+    @foods = Food.order(:id)
   end
 
   # POST /meals
