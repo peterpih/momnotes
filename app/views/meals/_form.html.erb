@@ -11,12 +11,34 @@
     </div>
   <% end %>
 
+ <div class="field">
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+  </div>
+ <!--  <div class="field">
+    <%= f.label :name %>
+    <%= f.select :name, MealType.all.collect { |m| [m.name, m.name] } %>
+  </div> -->
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= collection_select(:meal, :name, MealType.all, :name, :name, {}, {}) %>
   </div>
+  <div class='field'>
+    <%= f.collection_check_boxes(:meal_type, MealType.all, :id, :name) do |t| %>
+      <%= t.name %>
+      <%= t.check_box + t.text %>
+    <% end %>
+  </div>
+<!--   <div class='field'>
+    <% Food.all.each do |food| %>
+      <li>
+        <%= check_box_tag 'food_ids[]', food.id -%>
+        <%= h food.name -%>
+      </li>
+    <% end %>
+  </div> -->
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  class: 'btn btn-success btn-md' %>
   </div>
 <% end %>
