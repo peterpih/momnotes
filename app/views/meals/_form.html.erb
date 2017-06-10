@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
- <div class="field">
+  <div class="field">
     <%= f.label :date %>
     <%= f.datetime_select :date %>
   </div>
@@ -25,17 +25,21 @@
   </div>
   <div style='display:inline'>
     <%= collection_check_boxes(:meal, :food_ids, Food.all, :id, :food_name) do |b| %>
-<div class="row">
-    <%= b.label(class: "check_box") do %>
-      <div class="col-xs-1", style="display:inline">
-        <%= b.check_box(class: "check_box") %>
-      </div>
-        <%= b.label %>
-      </div>       
+      <div class="row">
+        <%= b.label(class: "check_box") do %>
+          <div class="col-xs-1", style="display:inline">
+            <%= b.check_box(class: "check_box") %>
+          </div>
+          <%= b.label %>
+        <% end %>
+      </div> 
     <% end %>
   </div>
-<% end %>
 
+    <div class="field">
+    <%= f.label :note %>
+    <%= f.text_area :note,  size: '40X10' %>
+  </div>
 
   <div class="actions">
     <%= f.submit  class: 'btn btn-success btn-md' %>

@@ -14,9 +14,9 @@
     <% @meal_types.each do |meal_type| %>
       <tr>
         <td><%= meal_type.name %></td>
-        <td><%= link_to 'Show', meal_type %></td>
-        <td><%= link_to 'Edit', edit_meal_type_path(meal_type) %></td>
-        <td><%= link_to 'Destroy', meal_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', meal_type, class: 'btn btn-info btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_meal_type_path(meal_type), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Destroy', meal_type, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Meal Type', new_meal_type_path %>
+<%= link_to 'New Meal Type', new_meal_type_path, class: 'btn btn-success btn-md' %>
