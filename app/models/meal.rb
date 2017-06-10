@@ -1,4 +1,4 @@
 class Meal < ApplicationRecord
-  has_one :meal_type
-  has_many :foods, dependent: :destroy
+  has_many :meal_foods
+  has_many :foods, through: :meal_foods
 end
