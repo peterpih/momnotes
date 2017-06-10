@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Excercises</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @excercises.each do |excercise| %>
+      <tr>
+        <td><%= excercise.time %></td>
+        <td><%= excercise.note %></td>
+        <td><%= link_to 'Show', excercise, class: 'btn btn-info btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_excercise_path(excercise), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Destroy', excercise, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Excercise', new_excercise_path, class: 'btn btn-success btn-md' %>

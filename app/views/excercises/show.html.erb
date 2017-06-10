@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @excercise.time %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @excercise.note %>
+</p>
+
+<%= link_to 'Edit', edit_excercise_path(@excercise) %> |
+<%= link_to 'Back', excercises_path %>
