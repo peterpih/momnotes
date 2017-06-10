@@ -24,7 +24,7 @@
     <%= collection_select(:meal, :name, MealType.all, :name, :name, {}, {}) %>
   </div>
   <div style='display:inline'>
-    <%= collection_check_boxes(:meal, :food_ids, Food.all, :id, :food_name) do |b| %>
+    <%= collection_check_boxes(:meal, :food_ids, @foods, :id, :food_name) do |b| %>
       <div class="row">
         <%= b.label(class: "check_box") do %>
           <div class="col-xs-1", style="display:inline">

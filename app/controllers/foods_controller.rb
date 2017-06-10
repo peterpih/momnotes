@@ -4,7 +4,7 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.all
+    @foods = Food.order(:id)
   end
 
   # GET /foods/1

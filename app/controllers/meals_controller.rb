@@ -15,6 +15,7 @@ class MealsController < ApplicationController
   # GET /meals/new
   def new
     @meal = Meal.new
+    @foods = Food.order(:id)
   end
 
   # GET /meals/1/edit
