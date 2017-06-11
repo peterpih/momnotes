@@ -16,7 +16,7 @@
   <tbody>
     <% @toilets.each do |toilet| %>
       <tr>
-        <td><%= toilet.in %></td>
+        <td><%= toilet.in.strftime("%a %H:%M:%S") %></td>
         <td><%= toilet.out %></td>
         <td style="text-align:right"><%= toilet.duration_mins %></td>
         <td style="text-align:right"><%= toilet.interval.to_s %></td>
