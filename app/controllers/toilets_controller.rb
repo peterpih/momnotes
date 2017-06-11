@@ -7,9 +7,9 @@ class ToiletsController < ApplicationController
     @toilets = Toilet.order(in: :desc )
     last_in = @toilets.first.in
     @toilets.each do |t|
-      t.interval = (last_in - t.out)
-      logger.debug t.interval
-      logger.debug "hello " + last_in.strftime("%H%M%S")
+      interval = ((last_in - t.out) / 60).to_i
+      logger.debug interval
+      logger.debug "hello " + interval.to_s
       last_in = t.in
     end
   end
