@@ -5,6 +5,11 @@ class ToiletsController < ApplicationController
   # GET /toilets.json
   def index
     @toilets = Toilet.order(in: :desc )
+    last_in = @toilets.first.in
+    @toilets.each do |t|
+      t.interval = (last_in - t.out) / 60
+      last_in = t.in
+    end
   end
 
   # GET /toilets/1
