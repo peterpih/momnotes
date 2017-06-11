@@ -14,7 +14,7 @@
   <tbody>
     <% @excercises.each do |excercise| %>
       <tr>
-        <td><%= excercise.time %></td>
+        <td><%= excercise.time.strftime("%a %d / %H:%M") %></td>
         <td><%= excercise.note %></td>
         <td><%= link_to 'Show', excercise, class: 'btn btn-info btn-xs' %></td>
         <td><%= link_to 'Edit', edit_excercise_path(excercise), class: 'btn btn-primary btn-xs' %></td>

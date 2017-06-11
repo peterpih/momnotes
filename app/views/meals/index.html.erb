@@ -15,7 +15,7 @@
   <tbody>
     <% @meals.each do |meal| %>
       <tr>
-        <td><%= meal.date %></td>
+        <td><%= meal.date.strftime("%a %d / %H:%M") %></td>
         <td><%= meal.name %></td>
         <td><%= meal.note %></td>
         <td><%= link_to 'Show', meal, class: 'btn btn-info btn-xs' %></td>
