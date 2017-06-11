@@ -4,7 +4,7 @@ class ExcercisesController < ApplicationController
   # GET /excercises
   # GET /excercises.json
   def index
-    @excercises = Excercise.order(:time)
+    @excercises = Excercise.order(time: :desc)
   end
 
   # GET /excercises/1

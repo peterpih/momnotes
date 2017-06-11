@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.order(:date)
+    @entries = Entry.order(date: :desc)
   end
 
   # GET /entries/1
