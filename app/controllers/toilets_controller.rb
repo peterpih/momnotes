@@ -8,7 +8,6 @@ class ToiletsController < ApplicationController
     last_in = @toilets.first.in
     @toilets.each do |t|
       t.interval = ((last_in - t.out) / 60).to_i
-      logger.debug "hello " + t.interval.to_s
       last_in = t.in
     end
   end
@@ -75,6 +74,6 @@ class ToiletsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def toilet_params
-      params.require(:toilet).permit(:in, :out)
+      params.require(:toilet).permit(:in, :out, :inbed)
     end
 end

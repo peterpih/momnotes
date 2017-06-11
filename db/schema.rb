@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611140337) do
+ActiveRecord::Schema.define(version: 20170611170828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,9 +74,10 @@ ActiveRecord::Schema.define(version: 20170611140337) do
   create_table "toilets", force: :cascade do |t|
     t.datetime "in"
     t.datetime "out"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "interval"
+    t.boolean  "inbed",      default: false
   end
 
 end
