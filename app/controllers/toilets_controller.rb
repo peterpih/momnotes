@@ -8,6 +8,7 @@ class ToiletsController < ApplicationController
     last_in = @toilets.first.in
     @toilets.each do |t|
       t.interval = (last_in - t.out) / 60
+      logger.debug t.interval
       last_in = t.in
     end
   end
