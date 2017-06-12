@@ -23,8 +23,8 @@
     <%= f.label :name %>
     <%= collection_select(:meal, :name, MealType.all, :name, :name, {}, {}) %>
   </div>
-  <div style='display:inline'>
-    <%= collection_check_boxes(:meal, :food_ids, @foods, :id, :food_name) do |b| %>
+  <div class='form-group'>
+    <%= collection_check_boxes(:meal, :food_ids, @foods, :id, :name) do |b| %>
       <div class="row">
         <%= b.label(class: "check_box") do %>
           <div class="col-xs-1", style="display:inline">
@@ -33,6 +33,12 @@
           <%= b.label %>
         <% end %>
       </div> 
+    <% end %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.collection_check_boxes(:food_ids, Food.order(:name), :id, :name) do |cb| %>
+    <% cb.label(class: 'checkbox-inline input-checkbox') {cb.check_box(class: 'checkbox') + cb.label} %>
     <% end %>
   </div>
 
