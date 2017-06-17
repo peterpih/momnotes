@@ -19,7 +19,7 @@
         <td><%= meal.name %></td>
         <td><%= meal.note %></td>
         <td><%= link_to 'Show', meal, class: 'btn btn-info btn-xs' %></td>
-        <td><%= link_to 'Edit', edit_meal_path(meal), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_meal_path(meal), class: 'btn btn-info btn-xs' %></td>
         <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>

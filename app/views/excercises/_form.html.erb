@@ -11,9 +11,30 @@
     </div>
   <% end %>
 
+  <div class="checkbox">
+    <label>
+    <%= f.check_box :long_walk %>
+    <%= f.label :long_walk, class: 'checkbox'%>
+    </label>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <%= f.check_box :short_walk %>
+      <%= f.label :short_walk, class: 'checkbox' %>
+    </label>
+  </div>
+
   <div class="field">
     <%= f.label :time %>
     <%= f.datetime_select :time %>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input name="excercise[short_walk]" type="hidden" value="0" /><input type="checkbox" value="1" name="excercise[short_walk]" id="excercise_short_walk" />
+      <label class="checkbox" for="excercise_short_walk">Short walk</label>
+    </label>
   </div>
 
   <div class="field">

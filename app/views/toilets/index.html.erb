@@ -23,7 +23,7 @@
         <td style="text-align:right"><%= toilet.duration_mins %></td>
         <td style="text-align:right"><%= toilet.interval.to_s %></td>
         <td><%= link_to 'Show', toilet, class: 'btn btn-info btn-xs' %></td>
-        <td><%= link_to 'Edit', edit_toilet_path(toilet), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_toilet_path(toilet), class: 'btn btn-info btn-xs' %></td>
         <td><%= link_to 'Destroy', toilet, method: :delete, data: { confirm: 'Are you sure?' }, class: ' btn btn-danger btn-xs', class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
