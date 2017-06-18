@@ -30,13 +30,6 @@
     <%= f.datetime_select :time %>
   </div>
 
-  <div class="checkbox">
-    <label>
-      <input name="excercise[short_walk]" type="hidden" value="0" /><input type="checkbox" value="1" name="excercise[short_walk]" id="excercise_short_walk" />
-      <label class="checkbox" for="excercise_short_walk">Short walk</label>
-    </label>
-  </div>
-
   <div class="field">
     <%= f.label :note %>
     <%= f.text_area :note, size: "50x5" %>
