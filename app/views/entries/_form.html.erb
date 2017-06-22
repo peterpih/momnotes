@@ -17,6 +17,12 @@
   </div>
 
   <div class="field">
+    <%= f.label :bm do %>
+      <%= f.check_box :bm %>
+      BM
+    <% end %>
+  </div>
+  <div class="field">
     <%= f.label :note %>
     <%= f.text_area :note, size: '40x5' %>
   </div>

@@ -24,41 +24,7 @@
     <%= collection_select(:meal, :name, MealType.all, :name, :name, {}, {}) %>
   </div>
 
-  <hr>
-<p> second time</p>
-<% Food.all.each do |food| %>
-  <%= label_tag 'meal[food_ids][]', raw("#{check_box_tag('meal[food_ids[]')} #{food.name}") %>
-<% end %>
-<div style="background-color: yellow">
-  <%= hidden_field_tag 'meal[food_ids][]', nil %>
-  <% Food.all.each do |food| %>
-    <%= check_box_tag 'meal[food_ids][]', food.id, @meal.food_ids.include?(food.id), id: dom_id(food)%>
-    <%= food.name %><br>
-  <% end %>
-</div>
-<hr>
-<div style="background-color: orange">
-  <div class='input-group checkbox'>
-      <%= f.collection_check_boxes(:food_ids, Food.all, :id, :name) do |b| %>
-              <% b.label(class: 'checkbox') do %>
-              <%= b.check_box(class: "checkbox") + b.label%> 
-              <% end %>     
-      <% end %>
-  </div>
-</div>
-<hr>
-<hr>
-<hr>
-      <label><input type="checkbox" value="">Option 1</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value="">Option 2</label>
-    </div>
-    <div class="checkbox disabled">
-      <label><input type="checkbox" value="" disabled>Option 3</label>
-    </div>
-
-  <div class='input-group', style="background-color: grey">
+  <div class='input-group'>
     <%= f.collection_check_boxes(:food_ids, Food.order(:name), :id, :name) do |cb| %>
     <% cb.label(class: 'checkbox-inline input-checkbox') {cb.check_box(class: 'checkbox') + cb.label} %>
     <% end %>
@@ -66,7 +32,7 @@
 
     <div class="field">
     <%= f.label :note %>
-    <%= f.text_area :note,  size: '40X5' %>
+    <%= f.text_area :note,  size: '50X5' %>
   </div>
 
   <div class="actions">

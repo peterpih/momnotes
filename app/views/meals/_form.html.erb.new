@@ -23,18 +23,11 @@
     <%= f.label :name %>
     <%= collection_select(:meal, :name, MealType.all, :name, :name, {}, {}) %>
   </div>
-  <div class='checkbox-list' style="background-color: pink">
-      <%= collection_check_boxes(:meal, :food_ids, @foods, :id, :name) do |b| %>
-              <%= b.label(class: 'check_box') do %>
-                    <%= b.check_box(class: 'check_box') %>
-                  <%= b.label %>
-              <% end %>
-      <% end %>
-  </div>
+
   <hr>
 <p> second time</p>
 <% Food.all.each do |food| %>
-  <%= label_tag food.id, raw("#{check_box_tag(food.id)} #{food.name}") %>
+  <%= label_tag 'meal[food_ids][]', raw("#{check_box_tag('meal[food_ids[]')} #{food.name}") %>
 <% end %>
 <div style="background-color: yellow">
   <%= hidden_field_tag 'meal[food_ids][]', nil %>
@@ -55,21 +48,7 @@
 </div>
 <hr>
 <hr>
-<div style="background-color: green">
- <input type="hidden" name="meal[food_ids][]" id="meal_food_ids_" />
-    <input type="checkbox" name="meal[food_ids][]" id="food_1" value="1" />
-    <label class="checkbox" for="food_1">Hamburger</label>
-    <input type="checkbox" name="meal[food_ids][]" id="food_3" value="3" />
-    <label class="checkbox" for="food_3">Broth</label>
-    <input type="checkbox" name="meal[food_ids][]" id="food_4" value="4" />
-    <label class="checkbox" for="food_4">Banana</label>
-    <input type="checkbox" name="meal[food_ids][]" id="food_5" value="5" />
-    <label class="checkbox" for="food_5">Pudding</label>
-    <input type="checkbox" name="meal[food_ids][]" id="food_2" value="2" />
-    <label class="checkbox" for="food_2">Buttered Toast #1</label>
-    <div class="checkbox">
-  </div>
-    <hr>
+<hr>
       <label><input type="checkbox" value="">Option 1</label>
     </div>
     <div class="checkbox">
@@ -79,7 +58,7 @@
       <label><input type="checkbox" value="" disabled>Option 3</label>
     </div>
 
-  <div class='input-group'>
+  <div class='input-group', style="background-color: grey">
     <%= f.collection_check_boxes(:food_ids, Food.order(:name), :id, :name) do |cb| %>
     <% cb.label(class: 'checkbox-inline input-checkbox') {cb.check_box(class: 'checkbox') + cb.label} %>
     <% end %>
@@ -87,7 +66,7 @@
 
     <div class="field">
     <%= f.label :note %>
-    <%= f.text_area :note,  size: '50X5' %>
+    <%= f.text_area :note,  size: '40X5' %>
   </div>
 
   <div class="actions">
