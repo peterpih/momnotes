@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>WDay</th>
       <th>Day</th>
       <th>Time</th>
       <th>Long</th>
@@ -18,6 +19,7 @@
     <% @excercises.each do |excercise| %>
       <tr>
         <td><%= excercise.time.strftime("%a") %></td>
+        <td><%= excercise.time.strftime("%m") %></td>
         <td><%= excercise.time.strftime("%H:%M") %></td>
         <td><%= excercise.long_walk? ? "X" : " " %></td>
         <td><%= excercise.short_walk? ? "X" : " " %></td>
