@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>WDay</th>
       <th>Day</th>
       <th>Time</th>
       <th>Name</th>
@@ -17,6 +18,7 @@
     <% @meals.each do |meal| %>
       <tr>
         <td><%= meal.date.strftime("%a") %></td>
+        <td><%= meal.date.strftime("%d") %></td>
         <td><%= meal.date.strftime("%H:%M") %></td>
         <td><%= meal.name %></td>
         <td><%= meal.note %></td>

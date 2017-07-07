@@ -16,7 +16,7 @@
     <% @entries.each do |entry| %>
       <tr>
         <td><%= entry.date.strftime("%a") %>
-        <td><%= entry.date.strftime("%m") %>
+        <td><%= entry.date.strftime("%d") %>
         <td><%= entry.date.strftime("%H:%M") %>
         <td><%= entry.note %></td>
         <td><%= link_to 'Show', entry, class: 'btn btn-info btn-xs' %></td>

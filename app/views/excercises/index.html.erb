@@ -19,7 +19,7 @@
     <% @excercises.each do |excercise| %>
       <tr>
         <td><%= excercise.time.strftime("%a") %></td>
-        <td><%= excercise.time.strftime("%m") %></td>
+        <td><%= excercise.time.strftime("%d") %></td>
         <td><%= excercise.time.strftime("%H:%M") %></td>
         <td><%= excercise.long_walk? ? "X" : " " %></td>
         <td><%= excercise.short_walk? ? "X" : " " %></td>
