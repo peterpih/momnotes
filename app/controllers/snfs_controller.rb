@@ -4,7 +4,7 @@ class SnfsController < ApplicationController
   # GET /snfs
   # GET /snfs.json
   def index
-    @snfs = Snf.all
+    @snfs = Snf.order(rating: 'DESC')
   end
 
   # GET /snfs/1
@@ -69,6 +69,6 @@ class SnfsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def snf_params
-      params.require(:snf).permit(:name, :number, :address, :contact, :rating)
+      params.require(:snf).permit(:name, :number, :address, :contact, :rating, :link)
     end
 end

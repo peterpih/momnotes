@@ -5,11 +5,11 @@
 <table>
   <thead>
     <tr>
+      <th>Rating</th>
       <th>Name</th>
       <th>Number</th>
       <th>Address</th>
       <th>Contact</th>
-      <th>Rating</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +17,16 @@
   <tbody>
     <% @snfs.each do |snf| %>
       <tr>
-        <td><%= snf.name %></td>
+        <td><%= snf.rating %></td>
+        <% if !snf.link.nil? %>
+          <td><%= link_to snf.name, snf.link, target: "_blank" %></td>
+        <% else %>
+          <td><%= snf.name %></td>
+        <% end %>
         <td><%= snf.number %></td>
         <td><%= snf.address %></td>
         <td><%= snf.contact %></td>
-        <td><%= snf.rating %></td>
+        
         <td><%= link_to 'Show', snf, class: 'btn btn-success btn-xs'%></td>
         <td><%= link_to 'Edit', edit_snf_path(snf), class: 'btn btn-info btn-xs' %></td>
         <td><%= link_to 'Destroy', snf, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
