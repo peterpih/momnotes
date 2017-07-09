@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Snfs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Address</th>
+      <th>Contact</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @snfs.each do |snf| %>
+      <tr>
+        <td><%= snf.name %></td>
+        <td><%= snf.number %></td>
+        <td><%= snf.address %></td>
+        <td><%= snf.contact %></td>
+        <td><%= snf.rating %></td>
+        <td><%= link_to 'Show', snf %></td>
+        <td><%= link_to 'Edit', edit_snf_path(snf) %></td>
+        <td><%= link_to 'Destroy', snf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Snf', new_snf_path %>

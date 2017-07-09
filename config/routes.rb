@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :snfs
   resources :meal_types
   resources :excercises
   resources :exercises
@@ -9,4 +10,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'pages#welcome'
+
+  #get 'snf', to: 'pages#snf', as: 'snf'
 end

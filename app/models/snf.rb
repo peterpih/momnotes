@@ -1,0 +1,2 @@
+class Snf < ApplicationRecord
+end

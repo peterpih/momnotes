@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @snf.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @snf.number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @snf.address %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @snf.contact %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @snf.rating %>
+</p>
+
+<%= link_to 'Edit', edit_snf_path(@snf) %> |
+<%= link_to 'Back', snfs_path %>

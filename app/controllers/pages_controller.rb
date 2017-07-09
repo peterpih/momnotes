@@ -5,4 +5,6 @@ class PagesController < ApplicationController
     logger.debug "---" + request.domain[0..5] + "<<<<<"
   end
 
+  def snf
+  end
 end
