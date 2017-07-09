@@ -69,6 +69,6 @@ class SnfsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def snf_params
-      params.require(:snf).permit(:name, :number, :address, :contact, :rating, :link)
+      params.require(:snf).permit(:name, :number, :address, :contact, :rating, :link, :notes)
     end
 end

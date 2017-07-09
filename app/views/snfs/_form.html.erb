@@ -40,7 +40,11 @@
     <%= f.label :rating %>
     <%= f.text_field :rating %>
   </div>
-
+  
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes, size: '50x20' %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
