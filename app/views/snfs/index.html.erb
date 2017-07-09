@@ -22,9 +22,9 @@
         <td><%= snf.address %></td>
         <td><%= snf.contact %></td>
         <td><%= snf.rating %></td>
-        <td><%= link_to 'Show', snf %></td>
-        <td><%= link_to 'Edit', edit_snf_path(snf) %></td>
-        <td><%= link_to 'Destroy', snf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', snf, class: 'btn btn-success btn-xs'%></td>
+        <td><%= link_to 'Edit', edit_snf_path(snf), class: 'btn btn-info btn-xs' %></td>
+        <td><%= link_to 'Destroy', snf, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>

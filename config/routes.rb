@@ -11,5 +11,4 @@ Rails.application.routes.draw do
 
   root 'pages#welcome'
 
-  #get 'snf', to: 'pages#snf', as: 'snf'
 end
